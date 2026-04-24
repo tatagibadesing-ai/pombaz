@@ -7,11 +7,11 @@ const links = [
 export function Footer() {
   return (
     <footer className="border-t border-[#1a1a1a] bg-[#080808]">
-      <div className="mx-auto max-w-7xl px-6 py-10 lg:px-10">
+      <div className="mx-auto max-w-7xl px-6 py-10 lg:px-0">
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           <a href="#top" className="flex items-center gap-3" aria-label="POMBAZ — topo">
             <img
-              src="/logo-pombaz.png"
+              src="/Pombazlogo.webp"
               alt="POMBAZ"
               width={32}
               height={32}

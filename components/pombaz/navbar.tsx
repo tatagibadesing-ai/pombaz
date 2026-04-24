@@ -22,21 +22,21 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-[100] transition-all duration-300 ${
         scrolled
           ? "border-b border-[color:var(--border-subtle)] bg-[rgba(10,10,10,0.74)] backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-0">
         <div className="flex h-16 items-center justify-between md:h-20">
           <a href="#top" className="flex items-center gap-3" aria-label="POMBAZ — início">
             <img
-              src="/logo-pombaz.png"
+              src="/Pombazlogo.webp"
               alt="POMBAZ"
-              width={40}
-              height={40}
-              className="h-10 w-10 rounded-[8px] object-cover"
+              width={34}
+              height={34}
+              className="h-[34px] w-[34px] rounded-[6px] object-contain"
             />
             <span className="font-[family:var(--font-heading)] text-xl font-bold tracking-[-0.03em] text-[color:var(--text-primary)] md:text-2xl">
               POMBAZ
@@ -56,10 +56,12 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a href="#produtos" className="pombaz-button group hidden sm:inline-flex">
-              Ver Produtos
-              <ArrowRight className="h-3.5 w-3.5 pombaz-arrow" />
-            </a>
+            <div className="hidden lg:block">
+              <a href="#produtos" className="pombaz-button pombaz-button-outline group">
+                Ver Produtos
+                <ArrowRight className="h-3.5 w-3.5 pombaz-arrow" />
+              </a>
+            </div>
 
             <button
               type="button"
@@ -89,10 +91,6 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a href="#produtos" onClick={() => setOpen(false)} className="pombaz-button group mt-2 w-full">
-                Ver Produtos
-                <ArrowRight className="h-3.5 w-3.5 pombaz-arrow" />
-              </a>
             </div>
           </nav>
         )}

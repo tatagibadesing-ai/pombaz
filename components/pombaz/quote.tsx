@@ -1,43 +1,73 @@
 import { Reveal } from "./reveal"
 
-function PigeonWatermark() {
+function ConversionPanel() {
   return (
-    <svg
-      viewBox="0 0 320 320"
-      className="h-full w-full"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M92 197C92 143.98 134.98 101 188 101H214C238.301 101 258 120.699 258 145V145C258 169.301 238.301 189 214 189H166"
-        stroke="currentColor"
-        strokeWidth="18"
-        strokeLinecap="round"
-      />
-      <path
-        d="M112 122L73 85"
-        stroke="currentColor"
-        strokeWidth="18"
-        strokeLinecap="round"
-      />
-      <path
-        d="M70 217C98.7188 245.719 145.281 245.719 174 217L188 203"
-        stroke="currentColor"
-        strokeWidth="18"
-        strokeLinecap="round"
-      />
-      <circle cx="210" cy="136" r="10" fill="currentColor" />
-    </svg>
+    <div className="relative h-full min-h-[360px] overflow-hidden rounded-[1.5rem] border border-[#1e1e1e] bg-[#050505] p-1.5 shadow-2xl shadow-black/50">
+      <div className="relative h-full overflow-hidden rounded-[1.15rem] border border-[#202020] bg-[linear-gradient(135deg,#141414_0%,#080808_48%,#101010_100%)] p-7">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.22]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(255,255,255,0.11) 0.8px, transparent 0.8px)",
+            backgroundSize: "10px 10px",
+          }}
+          aria-hidden="true"
+        />
+        <div className="pointer-events-none absolute left-1/2 top-0 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r from-transparent via-[rgba(240,192,0,0.7)] to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(240,192,0,0.08),transparent_46%)]" />
+
+        <div className="relative z-10 flex h-full flex-col justify-between">
+          <div>
+            <span className="text-[10px] uppercase tracking-[0.22em] text-[color:var(--text-muted)]">
+              Fluxo da atenção
+            </span>
+            <h3 className="mt-3 font-[family:var(--font-heading)] text-2xl font-bold text-white">
+              aparece, prende, converte
+            </h3>
+          </div>
+
+          <div className="my-10 space-y-4">
+            {[
+              { label: "Aparece", value: "Entrada", width: "100%" },
+              { label: "Prende", value: "Retenção", width: "72%" },
+              { label: "Converte", value: "Venda", width: "48%" },
+            ].map((item) => (
+              <div key={item.label} className="rounded-2xl border border-white/5 bg-black/45 p-4">
+                <div className="mb-3 flex items-center justify-between">
+                  <span className="text-sm font-medium text-white">{item.label}</span>
+                  <span className="text-[10px] uppercase tracking-[0.16em] text-[color:var(--text-muted)]">
+                    {item.value}
+                  </span>
+                </div>
+                <div className="h-2 overflow-hidden rounded-full bg-white/5">
+                  <div
+                    className="h-full rounded-full bg-[color:var(--brand-yellow)]"
+                    style={{ width: item.width }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-3 gap-1.5">
+            {["IA", "Shorts", "Produto"].map((item) => (
+              <div key={item} className="rounded-xl border border-white/5 bg-white/[0.03] px-2 py-3.5 text-center">
+                <span className="font-[family:var(--font-heading)] text-sm font-bold text-white">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
 export function Quote() {
   return (
     <section className="relative overflow-hidden border-t border-[color:var(--border-subtle)]">
-      <div className="absolute inset-0 pombaz-glow-center opacity-70" aria-hidden="true" />
-
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 md:py-28 lg:grid-cols-[minmax(0,1.05fr)_minmax(280px,0.95fr)] lg:items-center lg:gap-10 lg:px-10">
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-20 md:py-28 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,0.92fr)] lg:items-center lg:px-0">
         <div className="relative z-10">
           <Reveal>
             <span className="pombaz-label text-[color:var(--label-muted)]">
@@ -46,31 +76,20 @@ export function Quote() {
           </Reveal>
 
           <Reveal delay={90}>
-            <blockquote className="mt-6 max-w-3xl font-[family:var(--font-heading)] text-[clamp(22px,3vw,36px)] font-bold leading-[1.14] tracking-[-0.03em] text-[color:var(--text-primary)]">
-              “A pomba não pede licença pra aparecer. Ela aparece, prende, converte — e
-              vai embora antes de você perceber que já comprou.”
+            <blockquote className="mt-6 max-w-2xl font-[family:var(--font-heading)] text-[clamp(28px,4vw,48px)] font-bold leading-[1.04] tracking-[-0.03em] text-[color:var(--text-primary)]">
+              “Aparece rápido. Prende no primeiro segundo. Vende antes do scroll voltar.”
             </blockquote>
           </Reveal>
 
           <Reveal delay={160}>
-            <p className="mt-6 font-[family:var(--font-heading)] text-base font-medium uppercase tracking-[0.18em] text-[color:var(--text-primary)]">
+            <p className="mt-7 font-[family:var(--font-heading)] text-base font-bold uppercase tracking-[0.18em] text-[color:var(--text-primary)]">
               — <span className="pombaz-neon">POMBAZ</span>
             </p>
           </Reveal>
         </div>
 
-        <Reveal delay={120} className="relative h-[320px] min-h-[320px] sm:h-[420px] lg:h-[520px]">
-          <div className="absolute inset-0 text-[rgba(255,255,255,0.15)]">
-            <PigeonWatermark />
-          </div>
-          <div className="absolute inset-x-[8%] bottom-0 top-[8%]">
-            <img
-              src="/pomba-hero.jpg"
-              alt="Pomba 3D da POMBAZ"
-              className="h-full w-full object-contain object-right opacity-90"
-              draggable={false}
-            />
-          </div>
+        <Reveal delay={120} className="h-full">
+          <ConversionPanel />
         </Reveal>
       </div>
     </section>

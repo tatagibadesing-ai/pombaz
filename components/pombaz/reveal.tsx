@@ -1,40 +1,31 @@
 "use client"
 
-import { useEffect, useRef, type ReactNode } from "react"
+import { motion, type HTMLMotionProps } from "framer-motion"
+import type { ReactNode } from "react"
 
 interface RevealProps {
   children: ReactNode
   className?: string
   delay?: number
+  y?: number
 }
 
-export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
-  const ref = useRef<HTMLDivElement | null>(null)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const target = entry.target
-            window.setTimeout(() => target.classList.add("is-visible"), delay)
-            observer.unobserve(target)
-          }
-        })
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
-    )
-
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [delay])
+export function Reveal({ children, className = "", delay = 0, y = 22 }: RevealProps) {
+  const transition: HTMLMotionProps<"div">["transition"] = {
+    duration: 0.72,
+    ease: [0.22, 1, 0.36, 1],
+    delay: delay / 1000,
+  }
 
   return (
-    <div ref={ref} className={`pombaz-reveal ${className}`}>
+    <motion.div
+      initial={{ opacity: 0, y, filter: "blur(14px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "-90px" }}
+      transition={transition}
+      className={className}
+    >
       {children}
-    </div>
+    </motion.div>
   )
 }

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter, Space_Grotesk } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+import { SmoothScroll } from "@/components/pombaz/smooth-scroll"
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -29,11 +30,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon-light-32x32.png", media: "(prefers-color-scheme: light)" },
-      { url: "/icon-dark-32x32.png", media: "(prefers-color-scheme: dark)" },
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/Pombazlogo.webp", type: "image/webp" },
     ],
-    apple: "/apple-icon.png",
+    apple: "/Pombazlogo.webp",
   },
 }
 
@@ -50,6 +49,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${spaceGrotesk.variable} ${inter.variable} bg-background`}>
       <body suppressHydrationWarning className="bg-background font-sans text-foreground antialiased">
+        <SmoothScroll />
         {children}
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
