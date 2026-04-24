@@ -49,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${spaceGrotesk.variable} ${inter.variable} bg-background`}>
-      <body className="bg-background font-sans text-foreground antialiased">
+      <body suppressHydrationWarning className="bg-background font-sans text-foreground antialiased">
         {children}
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
