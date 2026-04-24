@@ -7,14 +7,14 @@ export function Hero() {
       id="top"
       className="relative min-h-[100svh] overflow-hidden border-b border-[color:var(--border-subtle)] bg-black pt-24 lg:h-[100svh] lg:pt-32"
     >
-      <div className="relative mx-auto grid min-h-[calc(100svh-6rem)] max-w-7xl grid-rows-[auto_1fr] items-start gap-2 px-6 lg:h-full lg:min-h-0 lg:grid-cols-[minmax(0,1.35fr)_minmax(360px,1fr)] lg:grid-rows-1 lg:items-center lg:gap-6 lg:px-0">
-        <div className="relative z-[90] w-full max-w-[52rem] self-start pt-4 lg:z-10 lg:self-center lg:pt-0">
+      <div className="relative mx-auto grid min-h-[calc(100svh-6rem)] max-w-7xl grid-rows-[auto_1fr] items-start gap-0 px-6 lg:h-full lg:min-h-0 lg:grid-cols-[minmax(0,1.35fr)_minmax(360px,1fr)] lg:grid-rows-1 lg:items-center lg:gap-6 lg:px-0">
+        <div className="relative z-[90] mx-auto w-full max-w-[52rem] self-start pt-4 text-center lg:mx-0 lg:z-10 lg:self-center lg:pt-0 lg:text-left">
           <Reveal>
             <span className="pombaz-label">— POMBAZ</span>
           </Reveal>
 
           <Reveal delay={80}>
-            <h1 className="pombaz-heading mt-3 max-w-[14ch] text-[clamp(25px,7.6vw,32px)] leading-[0.96] text-[color:var(--text-primary)] sm:max-w-[16ch] md:text-[clamp(42px,5.2vw,70px)] lg:mt-6 lg:max-w-[14ch]">
+            <h1 className="pombaz-heading mx-auto mt-3 max-w-[14ch] text-[clamp(25px,7.6vw,32px)] leading-[0.96] text-[color:var(--text-primary)] sm:max-w-[16ch] md:text-[clamp(42px,5.2vw,70px)] lg:mx-0 lg:mt-6 lg:max-w-[14ch]">
               Vídeos que grudam.
               <br />
               Produtos que <span className="pombaz-italic-highlight">vendem.</span>
@@ -22,14 +22,14 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={160}>
-            <p className="mt-4 max-w-[32rem] text-sm leading-relaxed text-[color:var(--text-primary)] sm:text-base md:mt-7 md:text-[1.0625rem]">
+            <p className="mx-auto mt-4 max-w-[32rem] text-sm leading-relaxed text-[color:var(--text-primary)] sm:text-base md:mt-7 md:text-[1.0625rem] lg:mx-0">
               A POMBAZ cria conteúdo com IA que captura atenção real — e transforma essa
               atenção em resultado.
             </p>
           </Reveal>
 
           <Reveal delay={240}>
-            <p className="mt-4 flex max-w-[24rem] flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[color:var(--text-secondary)] sm:max-w-none sm:text-sm md:mt-8">
+            <p className="mx-auto mt-4 flex max-w-[24rem] flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-[color:var(--text-secondary)] sm:max-w-none sm:text-sm md:mt-8 lg:mx-0 lg:justify-start">
               <span>Conteúdo com IA</span>
               <span className="text-[color:var(--text-muted)]">•</span>
               <span>Produtos digitais</span>
@@ -39,7 +39,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={320}>
-            <div className="mt-5 flex flex-col items-start gap-3 sm:flex-row sm:items-center lg:mt-10">
+            <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:items-center lg:mt-10 lg:justify-start lg:gap-4">
               <a href="#produtos" className="pombaz-button group">
                 Ver Produtos
                 <ArrowRight className="h-4 w-4 pombaz-arrow" />
@@ -51,7 +51,7 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={180} className="pointer-events-none relative z-10 flex h-[44svh] min-h-[280px] items-end justify-center self-end overflow-hidden lg:z-[60] lg:h-full lg:min-h-[360px] lg:justify-end lg:overflow-visible">
+        <Reveal delay={180} className="pointer-events-none relative z-10 -mt-3 flex h-[44svh] min-h-[280px] items-end justify-center self-end overflow-hidden lg:z-[60] lg:mt-0 lg:h-full lg:min-h-[360px] lg:justify-end lg:overflow-visible">
           <div className="relative flex h-full w-full items-end justify-center overflow-visible lg:justify-end">
             <video
               autoPlay

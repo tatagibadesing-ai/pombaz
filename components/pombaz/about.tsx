@@ -32,12 +32,12 @@ type VisualType = (typeof pillars)[number]["visual"]
 function CardVisual({ type }: { type: VisualType }) {
   if (type === "identity") {
     return (
-      <div className="relative mt-8 h-40 overflow-hidden rounded-2xl border border-white/5 bg-black">
+      <div className="relative mt-6 h-32 overflow-hidden rounded-2xl border border-white/5 bg-black md:mt-8 md:h-40">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(240,192,0,0.14),transparent_58%)]" />
-        <div className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/80 text-3xl font-bold text-white shadow-[0_0_34px_rgba(240,192,0,0.16)]">
+        <div className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white/80 text-2xl font-bold text-white shadow-[0_0_34px_rgba(240,192,0,0.16)] md:h-24 md:w-24 md:text-3xl">
           P
         </div>
-        <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-[color:var(--text-secondary)]">
+        <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-[color:var(--text-secondary)] md:bottom-6 md:left-6 md:right-6">
           <span>Recall</span>
           <span className="text-[color:var(--brand-yellow)]">98%</span>
         </div>
@@ -47,10 +47,10 @@ function CardVisual({ type }: { type: VisualType }) {
 
   if (type === "products") {
     return (
-      <div className="relative mt-8 h-40 overflow-hidden rounded-2xl border border-white/5 bg-black p-5">
-        <div className="space-y-3">
+      <div className="relative mt-6 h-32 overflow-hidden rounded-2xl border border-white/5 bg-black p-4 md:mt-8 md:h-40 md:p-5">
+        <div className="space-y-2 md:space-y-3">
           {["Dor real", "Entrega", "Acesso"].map((label, index) => (
-            <div key={label} className="flex items-center justify-between rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3">
+            <div key={label} className="flex items-center justify-between rounded-xl border border-white/5 bg-white/[0.03] px-3 py-2 md:px-4 md:py-3">
               <span className="text-xs text-[color:var(--text-secondary)]">{label}</span>
               <span className="rounded-md bg-[rgba(240,192,0,0.12)] px-2 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[color:var(--brand-yellow)]">
                 {index === 0 ? "Mapeado" : index === 1 ? "Pronto" : "Imediato"}
@@ -64,9 +64,9 @@ function CardVisual({ type }: { type: VisualType }) {
 
   if (type === "system") {
     return (
-      <div className="relative mt-8 h-40 overflow-hidden rounded-2xl border border-white/5 bg-black p-5">
+      <div className="relative mt-6 h-32 overflow-hidden rounded-2xl border border-white/5 bg-black p-4 md:mt-8 md:h-40 md:p-5">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:24px_24px]" />
-        <div className="relative grid h-full grid-cols-3 items-end gap-3">
+      <div className="relative grid h-full grid-cols-3 items-end gap-2 md:gap-3">
           {[44, 66, 88].map((height, index) => (
             <div key={height} className="flex flex-col items-center gap-3">
               <div
@@ -84,7 +84,7 @@ function CardVisual({ type }: { type: VisualType }) {
   }
 
   return (
-    <div className="relative mt-8 h-40 overflow-hidden rounded-2xl border border-white/5 bg-black">
+      <div className="relative mt-6 h-32 overflow-hidden rounded-2xl border border-white/5 bg-black md:mt-8 md:h-40">
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 360 160" fill="none" aria-hidden="true">
         <path
           d="M0 118C38 104 62 126 101 107C133 91 145 96 173 84C211 68 221 38 263 35C298 32 325 42 360 29"
@@ -103,7 +103,7 @@ function CardVisual({ type }: { type: VisualType }) {
           </linearGradient>
         </defs>
       </svg>
-      <div className="absolute left-6 top-6 rounded-xl border border-white/5 bg-white/[0.04] px-4 py-3">
+      <div className="absolute left-5 top-5 rounded-xl border border-white/5 bg-white/[0.04] px-3 py-2 md:left-6 md:top-6 md:px-4 md:py-3">
         <span className="block text-[10px] uppercase tracking-[0.16em] text-[color:var(--text-muted)]">
           Expansão
         </span>
@@ -118,15 +118,15 @@ function CardVisual({ type }: { type: VisualType }) {
 export function About() {
   return (
     <section id="sobre" className="border-t border-[color:var(--border-subtle)]">
-      <div className="mx-auto max-w-7xl px-6 py-20 md:py-28 lg:px-0">
-        <div className="grid gap-12 lg:grid-cols-10 lg:gap-16">
+      <div className="mx-auto max-w-7xl px-6 py-16 md:py-28 lg:px-0">
+        <div className="grid gap-8 lg:grid-cols-10 lg:gap-16">
           <div className="lg:col-span-4 lg:col-start-7 lg:row-start-1">
             <Reveal>
               <span className="pombaz-label">A Marca</span>
             </Reveal>
 
             <Reveal delay={80}>
-              <h2 className="pombaz-heading mt-6 text-[clamp(2.6rem,5vw,4.2rem)] leading-[1] text-[color:var(--text-primary)]">
+              <h2 className="pombaz-heading mt-4 text-[clamp(2.15rem,10vw,3rem)] leading-[1] text-[color:var(--text-primary)] md:mt-6 md:text-[clamp(2.6rem,5vw,4.2rem)]">
                 A pomba
                 <br />
                 é a <span className="pombaz-italic-highlight">marca.</span>
@@ -134,7 +134,7 @@ export function About() {
             </Reveal>
 
             <Reveal delay={160}>
-              <p className="mt-8 max-w-md text-base leading-relaxed text-[color:var(--text-primary)] md:text-[1.0625rem]">
+              <p className="mt-5 max-w-md text-sm leading-relaxed text-[color:var(--text-primary)] md:mt-8 md:text-[1.0625rem]">
                 A POMBAZ não é só uma loja de produtos digitais. É uma personagem. Um
                 sistema. Uma presença que o público reconhece antes de ler qualquer nome.
               </p>
@@ -149,15 +149,15 @@ export function About() {
                     className="pombaz-card group relative h-full overflow-hidden rounded-[1.5rem] border border-[#1e1e1e] bg-[#050505] p-1.5 shadow-2xl shadow-black/50 hover:border-[rgba(240,192,0,0.32)]"
                     data-cursor="hover"
                   >
-                    <div className="relative flex h-full flex-col overflow-hidden rounded-[1.15rem] border border-[#202020] bg-[linear-gradient(135deg,#151515_0%,#080808_48%,#111111_100%)] p-7">
+                    <div className="relative flex h-full flex-col overflow-hidden rounded-[1.15rem] border border-[#202020] bg-[linear-gradient(135deg,#151515_0%,#080808_48%,#111111_100%)] p-6 md:p-7">
                       <div className="pointer-events-none absolute left-1/2 top-0 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r from-transparent via-[rgba(240,192,0,0.62)] to-transparent" />
                       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(240,192,0,0.07),transparent_48%)]" />
 
                       <div className="relative z-10">
-                        <h3 className="font-[family:var(--font-heading)] text-xl font-bold tracking-[-0.02em] text-[color:var(--text-primary)]">
+                        <h3 className="font-[family:var(--font-heading)] text-lg font-bold tracking-[-0.02em] text-[color:var(--text-primary)] md:text-xl">
                           {pillar.title}
                         </h3>
-                        <p className="mt-3 text-sm leading-relaxed text-[color:var(--text-secondary)]">
+                        <p className="mt-2 text-sm leading-relaxed text-[color:var(--text-secondary)] md:mt-3">
                           {pillar.description}
                         </p>
                       </div>

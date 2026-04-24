@@ -13,15 +13,15 @@ const product = {
 export function Products() {
   return (
     <section id="produtos" className="border-t border-[color:var(--border-subtle)]">
-      <div className="mx-auto max-w-7xl px-6 py-20 md:py-28 lg:px-0">
-        <div className="mb-12 grid gap-10 lg:mb-16 lg:grid-cols-12 lg:gap-6">
+      <div className="mx-auto max-w-7xl px-6 py-16 md:py-28 lg:px-0">
+        <div className="mb-10 grid gap-8 lg:mb-16 lg:grid-cols-12 lg:gap-6">
           <div className="lg:col-span-7">
             <Reveal>
               <span className="pombaz-label">Catálogo</span>
             </Reveal>
 
             <Reveal delay={80}>
-              <h2 className="pombaz-heading mt-6 text-[clamp(2.8rem,5vw,4.4rem)] leading-[0.98] text-[color:var(--text-primary)]">
+              <h2 className="pombaz-heading mt-4 text-[clamp(2.15rem,10vw,3rem)] leading-[0.98] text-[color:var(--text-primary)] md:mt-6 md:text-[clamp(2.8rem,5vw,4.4rem)]">
                 Nossos <span className="pombaz-italic-highlight">produtos</span>
               </h2>
             </Reveal>
@@ -29,7 +29,7 @@ export function Products() {
 
           <div className="flex items-end lg:col-span-5">
             <Reveal delay={160}>
-              <p className="max-w-md text-base leading-relaxed text-[color:var(--text-secondary)] md:text-[1.0625rem]">
+              <p className="max-w-md text-sm leading-relaxed text-[color:var(--text-secondary)] md:text-[1.0625rem]">
                 Cada produto foi criado pra resolver um problema real. Sem enrolação.
               </p>
             </Reveal>
@@ -42,7 +42,7 @@ export function Products() {
               className="pombaz-card group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-[#1b1b1b] bg-[#050505] p-1.5 shadow-2xl shadow-black/50 hover:border-[rgba(240,192,0,0.32)]"
               data-cursor="hover"
             >
-              <div className="relative flex h-full flex-col overflow-hidden rounded-[1.15rem] border border-[#202020] bg-[linear-gradient(135deg,#101010_0%,#080808_42%,#0f0f0f_100%)] p-7 md:p-9">
+              <div className="relative flex h-full flex-col overflow-hidden rounded-[1.15rem] border border-[#202020] bg-[linear-gradient(135deg,#101010_0%,#080808_42%,#0f0f0f_100%)] p-6 md:p-9">
                 <div
                   className="pointer-events-none absolute inset-0 opacity-[0.28]"
                   style={{
@@ -61,7 +61,7 @@ export function Products() {
                     {product.tag}
                   </span>
 
-                  <h3 className="mt-8 max-w-[14ch] font-[family:var(--font-heading)] text-2xl font-bold leading-tight tracking-[-0.02em] text-[color:var(--text-primary)] md:text-[1.75rem]">
+                  <h3 className="mt-7 max-w-[15ch] font-[family:var(--font-heading)] text-[1.35rem] font-bold leading-tight tracking-[-0.02em] text-[color:var(--text-primary)] md:text-[1.75rem]">
                     {product.title}
                   </h3>
 
@@ -69,13 +69,13 @@ export function Products() {
                     {product.description}
                   </p>
 
-                  <div className="mt-auto pt-8">
-                    <div className="flex items-end justify-between gap-6 border-t border-white/10 pt-6">
-                      <div>
+                  <div className="mt-auto pt-7">
+                    <div className="flex flex-col gap-5 border-t border-white/10 pt-5 min-[390px]:flex-row min-[390px]:items-end min-[390px]:justify-between md:gap-6 md:pt-6">
+                      <div className="min-w-0">
                         <span className="text-[10px] uppercase tracking-[0.22em] text-[color:var(--text-muted)]">
                           A partir de
                         </span>
-                        <div className="mt-2 font-[family:var(--font-heading)] text-xl font-medium text-[color:var(--brand-yellow)] md:text-2xl">
+                        <div className="mt-2 whitespace-nowrap font-[family:var(--font-heading)] text-xl font-medium text-[color:var(--brand-yellow)] md:text-2xl">
                           {product.price}
                         </div>
                       </div>
@@ -84,7 +84,7 @@ export function Products() {
                         href={product.href}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="pombaz-button group shrink-0"
+                        className="pombaz-button group w-full shrink-0 min-[390px]:w-auto"
                       >
                         Acessar
                         <ArrowRight className="h-4 w-4 pombaz-arrow" />

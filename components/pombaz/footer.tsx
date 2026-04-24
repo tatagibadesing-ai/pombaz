@@ -7,15 +7,15 @@ const links = [
 export function Footer() {
   return (
     <footer className="border-t border-[#1a1a1a] bg-[#080808]">
-      <div className="mx-auto max-w-7xl px-6 py-10 lg:px-0">
-        <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
+      <div className="mx-auto max-w-7xl px-6 py-8 md:py-10 lg:px-0">
+        <div className="flex flex-col items-center justify-between gap-6 md:flex-row md:gap-8">
           <a href="#top" className="flex items-center gap-3" aria-label="POMBAZ — topo">
             <img
               src="/Pombazlogo.webp"
               alt="POMBAZ"
-              width={32}
-              height={32}
-              className="h-8 w-8 rounded-[6px] object-cover"
+              width={36}
+              height={36}
+              className="h-9 w-9 rounded-[6px] object-contain"
             />
             <span className="font-[family:var(--font-heading)] text-lg font-bold tracking-[-0.03em] text-[color:var(--text-primary)] md:text-xl">
               POMBAZ
@@ -23,12 +23,12 @@ export function Footer() {
           </a>
 
           <nav aria-label="Rodapé">
-            <ul className="flex items-center gap-6 md:gap-8">
+            <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 md:gap-8">
               {links.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm uppercase tracking-[0.14em] text-[#555555] hover:text-[#aaaaaa]"
+                    className="text-xs uppercase tracking-[0.14em] text-[#555555] hover:text-[#aaaaaa] md:text-sm"
                   >
                     {link.label}
                   </a>
@@ -37,7 +37,7 @@ export function Footer() {
             </ul>
           </nav>
 
-          <p className="text-center text-xs tracking-[0.08em] text-[#333333] md:text-right">
+          <p className="max-w-[260px] text-center text-[11px] leading-relaxed tracking-[0.08em] text-[#333333] md:max-w-none md:text-right md:text-xs">
             © 2025 POMBAZ — Todos os direitos reservados
           </p>
         </div>
