@@ -15,9 +15,9 @@ export function Hero() {
 
           <Reveal delay={80}>
             <h1 className="pombaz-heading mx-auto mt-3 max-w-[14ch] text-[clamp(25px,7.6vw,32px)] leading-[0.96] text-[color:var(--text-primary)] sm:max-w-[16ch] md:text-[clamp(42px,5.2vw,70px)] lg:mx-0 lg:mt-6 lg:max-w-[14ch]">
-              Vídeos que grudam.
+              Não é curso. Não é vídeo.
               <br />
-              Produtos que <span className="pombaz-italic-highlight">vendem.</span>
+              É o atalho direto pro <span className="pombaz-italic-highlight">resultado.</span>
             </h1>
           </Reveal>
 

@@ -19,11 +19,11 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "POMBAZ — Vídeos que grudam. Produtos que vendem.",
+  title: "POMBAZ — Não é curso. Não é vídeo. É o atalho direto pro resultado.",
   description:
     "A POMBAZ cria conteúdo com IA que captura atenção real e transforma essa atenção em resultado com produtos digitais diretos e úteis.",
   openGraph: {
-    title: "POMBAZ — Vídeos que grudam. Produtos que vendem.",
+    title: "POMBAZ — Não é curso. Não é vídeo. É o atalho direto pro resultado.",
     description:
       "Marca digital de conteúdo com IA focada em vídeos curtos e produtos digitais que entregam resultado real.",
     type: "website",
