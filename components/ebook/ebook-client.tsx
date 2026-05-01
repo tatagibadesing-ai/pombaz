@@ -10,7 +10,7 @@ export function EbookClient({ slug }: { slug?: string }) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("6767")
   const [message, setMessage] = useState("")
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [checkingSession, setCheckingSession] = useState(true)
   const [products, setProducts] = useState<EbookProduct[]>([])
   const [selectedProduct, setSelectedProduct] = useState<EbookProduct | null>(null)
