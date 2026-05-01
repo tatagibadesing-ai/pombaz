@@ -22,15 +22,15 @@ function ConversionPanel() {
               Fluxo da atenção
             </span>
             <h3 className="mt-3 font-[family:var(--font-heading)] text-xl font-bold text-white md:text-2xl">
-              aparece, prende, converte
+              Protocolo → Aplicação → Resultado
             </h3>
           </div>
 
           <div className="my-6 space-y-3 md:my-10 md:space-y-4">
             {[
-              { label: "Aparece", value: "Entrada", width: "100%" },
-              { label: "Prende", value: "Retenção", width: "72%" },
-              { label: "Converte", value: "Venda", width: "48%" },
+              { label: "Protocolo", value: "Entrada", width: "100%" },
+              { label: "Aplicação", value: "Retenção", width: "72%" },
+              { label: "Resultado", value: "Venda", width: "48%" },
             ].map((item) => (
               <div key={item.label} className="rounded-2xl border border-white/5 bg-black/45 p-3.5 md:p-4">
                 <div className="mb-2.5 flex items-center justify-between md:mb-3">
@@ -77,7 +77,7 @@ export function Quote() {
 
           <Reveal delay={90}>
             <blockquote className="mt-4 max-w-2xl font-[family:var(--font-heading)] text-[clamp(24px,8vw,32px)] font-bold leading-[1.04] tracking-[-0.03em] text-[color:var(--text-primary)] md:mt-6 md:text-[clamp(28px,4vw,48px)]">
-              “Aparece rápido. Prende no primeiro segundo. Vende antes do scroll voltar.”
+              “A pomba não promete. A pomba entrega.”
             </blockquote>
           </Reveal>
 

@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation"
 
-export default function EbookOldRedirectPage() {
+export default function EbookRedirectPage() {
   redirect("/e-book/receita-magica")
 }

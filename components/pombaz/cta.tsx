@@ -13,7 +13,7 @@ export function FinalCta() {
 
         <Reveal delay={80}>
           <h2 className="pombaz-heading mt-4 text-[clamp(2rem,9vw,2.75rem)] leading-[0.98] text-[color:var(--text-primary)] md:mt-6 md:text-[clamp(2.7rem,6vw,5rem)]">
-            Escolha seu produto.
+            Escolha seu protocolo.
             <br />
             Comece <span className="pombaz-italic-highlight">agora.</span>
           </h2>

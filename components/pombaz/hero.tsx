@@ -14,23 +14,26 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={80}>
-            <h1 className="pombaz-heading mx-auto mt-3 max-w-[14ch] text-[clamp(25px,7.6vw,32px)] leading-[0.96] text-[color:var(--text-primary)] sm:max-w-[16ch] md:text-[clamp(42px,5.2vw,70px)] lg:mx-0 lg:mt-6 lg:max-w-[14ch]">
-              Não é curso. Não é vídeo.
+            <h1 className="pombaz-heading mx-auto mt-6 max-w-none text-center lg:mx-0 lg:text-left text-[clamp(26px,6.5vw,52px)] leading-[1.15] text-[color:var(--text-primary)]">
+              Não é curso.
               <br />
-              É o atalho direto pro <span className="pombaz-italic-highlight">resultado.</span>
+              Não é vídeo.
+              <br />
+              É atalho direto
+              <br />
+              <span className="pombaz-italic-highlight">Para o resultado.</span>
             </h1>
           </Reveal>
 
           <Reveal delay={160}>
             <p className="mx-auto mt-4 max-w-[32rem] text-sm leading-relaxed text-[color:var(--text-primary)] sm:text-base md:mt-7 md:text-[1.0625rem] lg:mx-0">
-              A POMBAZ cria conteúdo com IA que captura atenção real — e transforma essa
-              atenção em resultado.
+              Protocolos práticos de treino e alimentação. Direto ao ponto, sem enrolação.
             </p>
           </Reveal>
 
           <Reveal delay={240}>
             <p className="mx-auto mt-4 flex max-w-[24rem] flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-[color:var(--text-secondary)] sm:max-w-none sm:text-sm md:mt-8 lg:mx-0 lg:justify-start">
-              <span>Conteúdo com IA</span>
+              <span>A pomba mais famosa do Brasil</span>
               <span className="text-[color:var(--text-muted)]">•</span>
               <span>Produtos digitais</span>
               <span className="text-[color:var(--text-muted)]">•</span>

@@ -8,15 +8,15 @@ const pillars = [
     visual: "identity",
   },
   {
-    title: "Produtos que entregam",
+    title: "Protocolos são investimentos",
     description:
       "Cada produto resolve uma dor real. Sem promessa vazia, sem enrolação.",
     visual: "products",
   },
   {
-    title: "Sistema com IA",
+    title: "Protocolo com método",
     description:
-      "Conteúdo produzido com inteligência artificial — consistente, escalável e com identidade.",
+      "Nada aqui é achismo. Cada protocolo foi estruturado pra ser aplicado de imediato e entregar resultado real.",
     visual: "system",
   },
   {
@@ -135,8 +135,8 @@ export function About() {
 
             <Reveal delay={160}>
               <p className="mt-5 max-w-md text-sm leading-relaxed text-[color:var(--text-primary)] md:mt-8 md:text-[1.0625rem]">
-                A POMBAZ não é só uma loja de produtos digitais. É uma personagem. Um
-                sistema. Uma presença que o público reconhece antes de ler qualquer nome.
+                A POMBAZ nasceu pra ser direta. Uma personagem com identidade própria, protocolos
+                que funcionam e zero enrolação. Reconhecível. Confiável. Diferente.
               </p>
             </Reveal>
           </div>

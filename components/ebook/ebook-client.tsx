@@ -2,9 +2,10 @@
 
 import { useEffect, useMemo, useState, type CSSProperties, type FormEvent, type ReactNode } from "react"
 import { ArrowRight, LogOut } from "lucide-react"
+import Link from "next/link"
 import type { EbookCategory, EbookProduct, EbookRecipe } from "@/lib/ebook/types"
 
-export function EbookClient() {
+export function EbookClient({ slug }: { slug?: string }) {
   const [authenticatedEmail, setAuthenticatedEmail] = useState<string | null>(null)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("6767")
@@ -19,18 +20,23 @@ export function EbookClient() {
   useEffect(() => {
     fetch("/api/ebook/session")
       .then((response) => response.json())
-      .then(async (data) => {
+      .then((data) => {
         if (data.authenticated && data.email) {
           setAuthenticatedEmail(data.email)
-          await loadEbook()
         }
       })
       .catch(() => setMessage("Erro ao verificar acesso."))
       .finally(() => {
-        setLoading(false)
         setCheckingSession(false)
       })
   }, [])
+
+  useEffect(() => {
+    if (authenticatedEmail) {
+      setLoading(true)
+      loadEbook(slug).finally(() => setLoading(false))
+    }
+  }, [slug, authenticatedEmail])
 
   const groupedRecipes = useMemo(() => {
     return categories
@@ -41,8 +47,8 @@ export function EbookClient() {
       .filter((group) => group.recipes.length > 0)
   }, [categories, recipes])
 
-  async function loadEbook(productId?: string) {
-    const params = productId ? `?productId=${encodeURIComponent(productId)}` : ""
+  async function loadEbook(productSlug?: string) {
+    const params = productSlug ? `?slug=${encodeURIComponent(productSlug)}` : ""
     const response = await fetch(`/api/ebook/data${params}`)
     const data = await response.json()
 
@@ -74,7 +80,6 @@ export function EbookClient() {
       if (!response.ok) throw new Error(data.error ?? "Erro ao entrar.")
 
       setAuthenticatedEmail(data.email)
-      await loadEbook()
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Erro ao entrar.")
     } finally {
@@ -124,7 +129,6 @@ export function EbookClient() {
           loading={loading}
           products={products}
           selectedProduct={selectedProduct}
-          selectProduct={loadEbook}
           signOut={signOut}
         />
       )}
@@ -216,7 +220,6 @@ function ReaderScreen({
   loading,
   products,
   selectedProduct,
-  selectProduct,
   signOut,
 }: {
   email: string
@@ -224,7 +227,6 @@ function ReaderScreen({
   loading: boolean
   products: EbookProduct[]
   selectedProduct: EbookProduct | null
-  selectProduct: (productId?: string) => Promise<void>
   signOut: () => void
 }) {
   return (
@@ -263,22 +265,27 @@ function ReaderScreen({
             </div>
 
             {products.length > 1 && (
-              <div className="grid gap-2 rounded-2xl border border-[#1b1b1b] bg-[#070707] p-2 md:min-w-[360px]">
-                {products.map((product) => (
-                  <button
-                    key={product.id}
-                    type="button"
-                    onClick={() => selectProduct(product.id)}
-                    className={`rounded-xl px-4 py-3 text-left font-[family:var(--font-heading)] text-xs font-bold uppercase tracking-[0.12em] transition ${
-                      selectedProduct?.id === product.id
-                        ? "bg-[color:var(--brand-yellow)] text-black"
-                        : "text-[color:var(--text-secondary)] hover:bg-[#111] hover:text-white"
-                    }`}
-                  >
-                    {product.title}
-                  </button>
-                ))}
-              </div>
+              <nav className="grid gap-2 rounded-2xl border border-[#1b1b1b] bg-[#070707] p-2 md:min-w-[360px]">
+                {products.map((product) => {
+                  // Map database slugs to user requested slugs for the URL
+                  const displaySlug = product.slug === "receitas-massa" ? "ganhar-massa" : product.slug;
+                  const isActive = selectedProduct?.id === product.id;
+                  
+                  return (
+                    <Link
+                      key={product.id}
+                      href={`/e-book/${displaySlug}`}
+                      className={`rounded-xl px-4 py-3 text-left font-[family:var(--font-heading)] text-xs font-bold uppercase tracking-[0.12em] transition ${
+                        isActive
+                          ? "bg-[color:var(--brand-yellow)] text-black"
+                          : "text-[color:var(--text-secondary)] hover:bg-[#111] hover:text-white"
+                      }`}
+                    >
+                      {product.title}
+                    </Link>
+                  );
+                })}
+              </nav>
             )}
           </div>
         </div>

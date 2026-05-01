@@ -11,9 +11,17 @@ export async function GET(request: Request) {
 
   const supabase = getAdminSupabase()
   const products = await getAccessibleProducts(email)
-  const requestedProductId = new URL(request.url).searchParams.get("productId")
+  const url = new URL(request.url)
+  const requestedProductId = url.searchParams.get("productId")
+  let requestedSlug = url.searchParams.get("slug")
+
+  // Map alias slugs
+  if (requestedSlug === "ganhar-massa") requestedSlug = "receitas-massa"
+
   const selectedProduct =
-    products.find((product) => product.id === requestedProductId) ?? products[0] ?? null
+    products.find((p) => p.id === requestedProductId || p.slug === requestedSlug) ?? 
+    products[0] ?? 
+    null
 
   if (!selectedProduct) {
     return NextResponse.json({ error: "Nenhum ebook liberado para esse email." }, { status: 403 })

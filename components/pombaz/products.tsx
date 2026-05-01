@@ -22,7 +22,7 @@ export function Products() {
 
             <Reveal delay={80}>
               <h2 className="pombaz-heading mt-4 text-[clamp(2.15rem,10vw,3rem)] leading-[0.98] text-[color:var(--text-primary)] md:mt-6 md:text-[clamp(2.8rem,5vw,4.4rem)]">
-                Nossos <span className="pombaz-italic-highlight">produtos</span>
+                Nossos <span className="pombaz-italic-highlight">protocolos</span>
               </h2>
             </Reveal>
           </div>

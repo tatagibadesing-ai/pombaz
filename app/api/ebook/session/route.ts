@@ -36,6 +36,7 @@ export async function POST(request: Request) {
     await setEbookCookie(normalizedEmail)
     return NextResponse.json({ authenticated: true, email: normalizedEmail })
   } catch (error) {
+    console.error("Erro na sessão do ebook:", error)
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Erro ao entrar no ebook." },
       { status: 500 },
