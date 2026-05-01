@@ -42,7 +42,7 @@ export default function ReceitaMagicaPage() {
               </a>
 
               <div className="flex items-center gap-3">
-                <a href="#comprar" className="pombaz-button pombaz-button-outline group hidden lg:inline-flex">
+                <a href="https://pay.kiwify.com.br/1CsXzQ1" className="pombaz-button pombaz-button-outline group hidden lg:inline-flex">
                   Quero agora · R$16,90
                   <ArrowRight className="h-3.5 w-3.5 pombaz-arrow" />
                 </a>
@@ -92,7 +92,7 @@ export default function ReceitaMagicaPage() {
 
             <Reveal delay={320}>
               <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:items-center sm:justify-center lg:mt-10 lg:justify-start lg:gap-4">
-                <a id="comprar" href="#" className="pombaz-button group">
+                <a href="https://pay.kiwify.com.br/1CsXzQ1" className="pombaz-button group">
                   Quero emagrecer agora
                   <ArrowRight className="h-4 w-4 pombaz-arrow" />
                 </a>
@@ -200,19 +200,22 @@ export default function ReceitaMagicaPage() {
           <div className="grid gap-8 md:grid-cols-3">
             {[
               {
-                img: "/placeholder.png",
-                title: "Salada turbinada de atum com abacate",
-                macros: ["~280 kcal", "32g proteína", "10 min."],
+                img: "/omelete.jpg",
+                title: "Omelete de Cottage com Espinafre",
+                desc: "Proteína e saciedade para começar o dia.",
+                macros: ["263 kcal", "20,6g proteína", "10 min."],
               },
               {
-                img: "/placeholder.png",
-                title: "Panqueca fit de aveia e banana",
-                macros: ["~220 kcal", "15g proteína", "5 min."],
+                img: "/abobora.jpg",
+                title: "Abobrinha Recheada com Carne Moída Magra",
+                desc: "Baixo carboidrato e alta saciedade.",
+                macros: ["346 kcal", "32,3g proteína", "20 min."],
               },
               {
-                img: "/placeholder.png",
-                title: "Sopa cremosa de legumes com frango",
-                macros: ["~310 kcal", "28g proteína", "15 min."],
+                img: "/tapiocadoce.jpg",
+                title: "Tapioca de Banana com Pasta de Amendoim",
+                desc: "Energia rápida e sabor marcante antes do treino.",
+                macros: ["291 kcal", "4,6g proteína", "5 min."],
               },
             ].map((item, i) => (
               <div key={i} className="group overflow-hidden rounded-3xl bg-gradient-to-br from-[#0B1325] to-[#03060D] border border-[#1e293b] hover:border-[#a38a59]/40 transition-colors duration-300">
@@ -226,7 +229,7 @@ export default function ReceitaMagicaPage() {
                 <div className="p-6 md:p-8">
                   <h3 className="font-[family:var(--font-heading)] text-xl font-medium text-white">{item.title}</h3>
                   <p className="mt-2 text-sm text-slate-400">
-                    Uma opção deliciosa e super prática para encaixar na sua rotina sem sair da dieta.
+                    {item.desc}
                   </p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {item.macros.map((macro, j) => (
@@ -278,12 +281,20 @@ export default function ReceitaMagicaPage() {
               </div>
             ))}
 
-            <div className="relative mt-8 flex flex-col gap-4 overflow-hidden rounded-2xl bg-gradient-to-br from-[#0B1325] to-[#03060D] border border-[#1e293b] hover:border-[#a38a59]/40 transition-colors duration-300 p-6 sm:flex-row sm:items-center sm:p-8">
+            <div className="relative mt-8 flex flex-col gap-6 overflow-hidden rounded-2xl bg-gradient-to-br from-[#0B1325] to-[#03060D] border border-[#1e293b] hover:border-[#a38a59]/40 transition-colors duration-300 p-6 sm:flex-row sm:items-center sm:p-8">
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent" />
-              <span className="text-4xl">🎁</span>
+              
+              <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-blue-500/30 bg-black/40 shadow-2xl">
+                <img 
+                  src="/presente-premium.png" 
+                  alt="Bônus Premium" 
+                  className="h-full w-full object-cover"
+                />
+              </div>
+
               <div className="relative z-10">
-                <h3 className="font-semibold text-blue-400">Bônus: Guia de montagem de prato</h3>
-                <p className="mt-1 text-sm text-slate-300">
+                <h3 className="font-[family:var(--font-heading)] text-xl font-semibold text-blue-400">Bônus: Guia de montagem de prato</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-300">
                   Um guia prático ensinando como montar qualquer refeição para o emagrecimento, usando as proporções perfeitas.
                 </p>
               </div>
@@ -371,7 +382,7 @@ export default function ReceitaMagicaPage() {
             <p className="mt-3 text-sm text-slate-400">Acesso vitalício • Digital • Imediato</p>
 
             <a
-              href="#comprar"
+              href="https://pay.kiwify.com.br/1CsXzQ1"
               className="mt-8 flex w-full items-center justify-center gap-2 bg-gradient-to-b from-[#5ba4fc] to-[#1a62ea] text-[#041124] font-bold tracking-widest uppercase rounded-xl border-[3px] border-[#010a17] shadow-[inset_0_2px_4px_rgba(255,255,255,0.5),0_4px_10px_rgba(0,0,0,0.5)] hover:brightness-110 hover:-translate-y-1 transition-all duration-300 px-8 py-4 text-base"
             >
               🔥 Quero acesso agora <ArrowRight className="h-5 w-5" />
