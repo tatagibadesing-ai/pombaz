@@ -13,7 +13,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ slug
     .single()
 
   if (guideError || !guide) {
-    return NextResponse.json({ error: "Protocolo nao encontrado." }, { status: 404 })
+    return NextResponse.json({ error: "Protocolo não encontrado." }, { status: 404 })
   }
 
   const { data: exercises, error: exError } = await supabase

@@ -54,7 +54,7 @@ export async function POST(request: Request) {
   }
 
   if (!title?.trim() || !slug?.trim()) {
-    return NextResponse.json({ error: "Titulo e slug sao obrigatorios." }, { status: 400 })
+    return NextResponse.json({ error: "Título e slug são obrigatórios." }, { status: 400 })
   }
 
   const supabase = getAdminSupabase()
@@ -141,7 +141,7 @@ export async function PATCH(request: Request) {
     return NextResponse.json({ ok: true })
   }
 
-  return NextResponse.json({ error: "Tipo invalido." }, { status: 400 })
+  return NextResponse.json({ error: "Tipo inválido." }, { status: 400 })
 }
 
 // DELETE - delete guide (cascades exercises)

@@ -28,14 +28,14 @@ export async function POST(request: Request) {
   }
 
   const prompt = `
-Voce e o editor de ebooks da POMBAZ.
+Você é o editor de ebooks da POMBAZ.
 Produto/ebook selecionado: ${productTitle || "ebook de receitas"}.
 Transforme o texto bruto abaixo em receitas estruturadas para esse produto.
 
 Responda SOMENTE com JSON valido, sem markdown, no formato:
 [
   {
-    "category_title": "Cafe da Manha",
+    "category_title": "Café da Manhã",
     "title": "Nome da receita",
     "subtitle": "Resumo curto e convincente",
     "ingredients": ["ingrediente com quantidade"],
@@ -46,19 +46,19 @@ Responda SOMENTE com JSON valido, sem markdown, no formato:
       "carboidratos": "00 g",
       "gorduras": "00 g"
     },
-    "notes": "observacao curta opcional"
+    "notes": "observação curta opcional"
   }
 ]
 
 Regras:
 - Separe por categorias quando o texto indicar.
-- Quando o texto vier com "Pagina", "Secao", "Cafe da Manha", "Almoco", "Jantar" ou blocos parecidos, use isso como "category_title".
-- Quando vierem varias receitas em sequencia, crie um objeto por receita e preserve a ordem original.
-- Se uma informacao nutricional nao existir, estime com prudencia e marque como "aprox.".
-- Escreva em portugues do Brasil.
-- Nao invente promessas medicas.
+- Quando o texto vier com "Página", "Seção", "Café da Manhã", "Almoço", "Jantar" ou blocos parecidos, use isso como "category_title".
+- Quando vierem várias receitas em sequência, crie um objeto por receita e preserve a ordem original.
+- Se uma informação nutricional não existir, estime com prudência e marque como "aprox.".
+- Escreva em português do Brasil.
+- Não invente promessas médicas.
 - Mantenha ingredientes e preparo simples para celular.
-- Ajuste o tom ao produto selecionado, sem misturar receitas de objetivos diferentes quando o texto separar publicos.
+- Ajuste o tom ao produto selecionado, sem misturar receitas de objetivos diferentes quando o texto separar públicos.
 
 Texto bruto:
 ${rawText}
@@ -88,13 +88,13 @@ ${rawText}
   const text = gemini.candidates?.[0]?.content?.parts?.[0]?.text
 
   if (!text) {
-    return NextResponse.json({ error: "A IA nao devolveu conteudo." }, { status: 500 })
+    return NextResponse.json({ error: "A IA não devolveu conteúdo." }, { status: 500 })
   }
 
   try {
     const drafts = JSON.parse(text)
     return NextResponse.json({ drafts })
   } catch {
-    return NextResponse.json({ error: "A IA devolveu JSON invalido.", raw: text }, { status: 500 })
+    return NextResponse.json({ error: "A IA devolveu JSON inválido.", raw: text }, { status: 500 })
   }
 }

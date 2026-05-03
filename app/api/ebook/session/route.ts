@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     const hasAccess = await hasEbookAccess(normalizedEmail)
 
     if (!hasAccess) {
-      return NextResponse.json({ error: "Esse email ainda nao foi liberado." }, { status: 403 })
+      return NextResponse.json({ error: "Esse email ainda não foi liberado." }, { status: 403 })
     }
 
     await setEbookCookie(normalizedEmail)

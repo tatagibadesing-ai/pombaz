@@ -21,7 +21,7 @@ export async function POST(request: Request) {
   const body = (await request.json()) as RecipeBody
 
   if (!body.categoryId || !body.title?.trim()) {
-    return NextResponse.json({ error: "Categoria e titulo sao obrigatorios." }, { status: 400 })
+    return NextResponse.json({ error: "Categoria e título são obrigatórios." }, { status: 400 })
   }
 
   const supabase = getAdminSupabase()
@@ -54,7 +54,7 @@ export async function DELETE(request: Request) {
 
   const { id } = (await request.json()) as { id?: string }
 
-  if (!id) return NextResponse.json({ error: "ID obrigatorio." }, { status: 400 })
+  if (!id) return NextResponse.json({ error: "ID obrigatório." }, { status: 400 })
 
   const supabase = getAdminSupabase()
   const { error } = await supabase.from("ebook_recipes").delete().eq("id", id)
@@ -72,7 +72,7 @@ export async function PATCH(request: Request) {
   const body = (await request.json()) as RecipeBody & { id?: string; isPublished?: boolean }
 
   if (!body.id || !body.categoryId || !body.title?.trim()) {
-    return NextResponse.json({ error: "ID, categoria e titulo sao obrigatorios." }, { status: 400 })
+    return NextResponse.json({ error: "ID, categoria e título são obrigatórios." }, { status: 400 })
   }
 
   const supabase = getAdminSupabase()

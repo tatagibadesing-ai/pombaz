@@ -60,7 +60,7 @@ export function EbookProtocolClient({ slug }: { slug: string }) {
   }, [page, exercises.length])
 
   if (loading) return <LoadingScreen />
-  if (error || !guide) return <ErrorScreen message={error || "Protocolo nao encontrado."} />
+  if (error || !guide) return <ErrorScreen message={error || "Protocolo não encontrado."} />
 
   return (
     <div className="protocol-root">

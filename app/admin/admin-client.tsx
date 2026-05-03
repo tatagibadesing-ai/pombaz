@@ -443,10 +443,10 @@ export function AdminClient() {
           <div>
             <span className="pombaz-label">— PAINEL ADMIN</span>
             <h1 className="pombaz-heading mt-4 text-[clamp(42px,7vw,84px)] leading-[0.92]">
-              Receita <span className="pombaz-italic-highlight">Magica.</span>
+              Receita <span className="pombaz-italic-highlight">Mágica.</span>
             </h1>
             <p className="mt-4 max-w-2xl text-[color:var(--text-secondary)]">
-              Escolha o produto, organize as receitas, libere o acesso certo e deixe a IA montar rascunhos por pagina.
+              Escolha o produto, organize as receitas, libere o acesso certo e deixe a IA montar rascunhos por página.
             </p>
           </div>
 
@@ -498,7 +498,7 @@ export function AdminClient() {
             <Panel title="Categorias" icon={<Plus className="h-5 w-5" />}>
               <form onSubmit={createCategory} className="space-y-4">
                 <Field label="Nome da categoria" value={categoryTitle} onChange={setCategoryTitle} />
-                <Area label="Descricao" value={categoryDescription} onChange={setCategoryDescription} />
+                <Area label="Descrição" value={categoryDescription} onChange={setCategoryDescription} />
                 <button type="submit" className="pombaz-button group w-full">
                   Criar categoria
                   <ArrowRight className="h-4 w-4 pombaz-arrow" />
@@ -577,7 +577,7 @@ export function AdminClient() {
                       type="button"
                       onClick={() => setEditingRecipe(null)}
                       className="rounded-lg border border-[#222] p-2 text-[color:var(--text-secondary)] hover:text-white"
-                      aria-label="Fechar edicao"
+                      aria-label="Fechar edição"
                     >
                       <X className="h-4 w-4" />
                     </button>
@@ -588,7 +588,7 @@ export function AdminClient() {
                     form={editForm}
                     setForm={setEditForm}
                     onSubmit={updateRecipe}
-                    submitLabel="Salvar alteracoes"
+                    submitLabel="Salvar alterações"
                     large
                     uploadImage={uploadImage}
                   />
@@ -622,7 +622,7 @@ export function AdminClient() {
               <div className="space-y-4">
                 {drafts.length === 0 ? (
                   <p className="text-sm text-[color:var(--text-secondary)]">
-                    Os rascunhos aparecem aqui. Depois voce adiciona a imagem e publica.
+                    Os rascunhos aparecem aqui. Depois você adiciona a imagem e publica.
                   </p>
                 ) : (
                   drafts.map((draft, index) => (
@@ -785,8 +785,8 @@ function RecipeForm({
             ))}
           </select>
         </label>
-        <Field label="Titulo" value={form.title} onChange={(value) => setForm((current) => ({ ...current, title: value }))} />
-        <Field label="Subtitulo" value={form.subtitle} onChange={(value) => setForm((current) => ({ ...current, subtitle: value }))} />
+        <Field label="Título" value={form.title} onChange={(value) => setForm((current) => ({ ...current, title: value }))} />
+        <Field label="Subtítulo" value={form.subtitle} onChange={(value) => setForm((current) => ({ ...current, subtitle: value }))} />
         <ImageUploadField
           imageUrl={form.imageUrl}
           label="Imagem da receita"

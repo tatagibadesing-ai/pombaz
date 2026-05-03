@@ -257,7 +257,7 @@ function ReaderScreen({
               </h1>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[color:var(--text-secondary)] md:text-base">
                 {selectedProduct?.description ??
-                  "Receitas organizadas por categoria, com imagem, ingredientes, preparo e informacao nutricional."}
+                  "Receitas organizadas por categoria, com imagem, ingredientes, preparo e informação nutricional."}
               </p>
               <p className="mt-3 text-[10px] uppercase tracking-[0.18em] text-[color:var(--text-muted)]">
                 Acesso: {email}
@@ -302,7 +302,7 @@ function ReaderScreen({
                 <div className="grid border-b border-[#191919] md:grid-cols-[220px_1fr]">
                   <div className="border-b border-[#191919] p-6 md:border-b-0 md:border-r md:p-8">
                     <span className="text-[10px] uppercase tracking-[0.24em] text-[color:var(--text-muted)]">
-                      Pagina {String(pageIndex + 1).padStart(2, "0")}
+                      Página {String(pageIndex + 1).padStart(2, "0")}
                     </span>
                     <div className="mt-5 h-px w-12 bg-[color:var(--brand-yellow)]" />
                   </div>
@@ -327,7 +327,7 @@ function ReaderScreen({
             ))}
           </div>
         ) : (
-          <p className="text-[color:var(--text-secondary)]">Ainda nao tem receitas publicadas.</p>
+          <p className="text-[color:var(--text-secondary)]">Ainda não tem receitas publicadas.</p>
         )}
       </div>
     </section>
@@ -387,7 +387,7 @@ function RecipeCard({ recipe }: { recipe: EbookRecipe }) {
         {nutritionEntries.length > 0 && (
           <div className="mt-7 border-t border-[#191919] pt-5">
             <div className="flex items-center justify-between gap-4">
-              <SectionTitle>Informacao nutricional</SectionTitle>
+              <SectionTitle>Informação nutricional</SectionTitle>
               <span className="text-[10px] uppercase tracking-[0.18em] text-[color:var(--text-muted)]">
                 por receita
               </span>

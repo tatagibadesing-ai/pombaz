@@ -9,7 +9,7 @@ export async function POST(request: Request) {
   const { email, productId } = (await request.json()) as { email?: string; productId?: string }
 
   if (!email?.trim() || !productId) {
-    return NextResponse.json({ error: "Email e produto sao obrigatorios." }, { status: 400 })
+    return NextResponse.json({ error: "Email e produto são obrigatórios." }, { status: 400 })
   }
 
   const supabase = getAdminSupabase()
@@ -36,7 +36,7 @@ export async function PATCH(request: Request) {
 
   const { id, hasAccess } = (await request.json()) as { id?: string; hasAccess?: boolean }
 
-  if (!id) return NextResponse.json({ error: "ID obrigatorio." }, { status: 400 })
+  if (!id) return NextResponse.json({ error: "ID obrigatório." }, { status: 400 })
 
   const supabase = getAdminSupabase()
   const { error } = await supabase.from("ebook_access").update({ has_access: hasAccess ?? false }).eq("id", id)

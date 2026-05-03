@@ -10,7 +10,10 @@ export async function GET(request: Request) {
   }
 
   const supabase = getAdminSupabase()
-  const products = await getAccessibleProducts(email)
+  const products = (await getAccessibleProducts(email)).map(p => ({
+    ...p,
+    title: p.title === "Receita Magica" ? "Receita Mágica" : p.title
+  }))
   const url = new URL(request.url)
   const requestedProductId = url.searchParams.get("productId")
   let requestedSlug = url.searchParams.get("slug")

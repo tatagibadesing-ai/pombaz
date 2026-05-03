@@ -15,7 +15,7 @@ export async function POST(request: Request) {
   }
 
   if (!productId || !title?.trim()) {
-    return NextResponse.json({ error: "Produto e titulo sao obrigatorios." }, { status: 400 })
+    return NextResponse.json({ error: "Produto e título são obrigatórios." }, { status: 400 })
   }
 
   const supabase = getAdminSupabase()
